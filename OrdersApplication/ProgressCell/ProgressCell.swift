@@ -94,6 +94,4 @@ class ProgressCell: UITableViewCell , FlexibleSteppedProgressBarDelegate{
         }
         return ""
     }
-    
-    
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class OrdersSectionCell: UITableViewCell {
-
+    
     @IBOutlet weak var orderImage: UIImageView!
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var orderDate: UILabel!
@@ -17,25 +17,41 @@ class OrdersSectionCell: UITableViewCell {
     @IBOutlet weak var orderNum: UILabel!
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var parentView: UIView!
-    
     var pressed: (()->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        parentView.layer.cornerRadius = 5.0
-//        parentView.layer.masksToBounds = true
-//        parentView.layer.borderWidth = 0.5
-//        parentView.layer.borderColor = UIColor.borderPrimary?.cgColor
-        view.layer.borderWidth = 0.5
-        view.layer.borderColor = UIColor.borderPrimary?.cgColor
-       
+        configureView()
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
     @IBAction func expandPressed(_ sender: Any) {
         self.pressed?()
+    }
+    func configureView() {
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.borderPrimary?.cgColor
+    }
+    func configureCell(product: Product?) {
+        var str = product?.orderDate
+        var strArray = str!.components(separatedBy: " ")
+        let x =  convertDateFormat(inputDate: product?.orderDate ?? "22-9")
+        var strArray1 = x.components(separatedBy: " ")
+        orderDate.text = strArray[0]
+        orderTime.text = strArray1[0] + "" + strArray1[1]
+        orderNum.text = "Order Num: "+(product?.orderID ?? "7")
+        totalPrice.text = "Total: " + (product?.totalPrice ?? "50")+" BD"
+    }
+    func convertDateFormat(inputDate: String) -> String {
+        
+        let olDateFormatter = DateFormatter()
+        olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        let oldDate = olDateFormatter.date(from: inputDate)
+        
+        let convertDateFormatter = DateFormatter()
+        convertDateFormatter.dateFormat = "h:mm a"
+        return convertDateFormatter.string(from: oldDate ?? Date())
     }
 }
