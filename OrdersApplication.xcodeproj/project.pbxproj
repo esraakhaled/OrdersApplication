@@ -15,6 +15,10 @@
 		0281B6D528DFA37200EC0114 /* SheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0281B6D328DFA37200EC0114 /* SheetTableViewCell.xib */; };
 		029BB51F28DF1D0F00DE1BC5 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029BB51D28DF1D0E00DE1BC5 /* ItemsCell.swift */; };
 		029BB52028DF1D0F00DE1BC5 /* ItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029BB51E28DF1D0E00DE1BC5 /* ItemsCell.xib */; };
+		02CDE0AF28E322240092E7F1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CDE0AE28E322240092E7F1 /* Product.swift */; };
+		02CDE0B228E32D350092E7F1 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CDE0B128E32D350092E7F1 /* URLs.swift */; };
+		02CDE0B428E32D4E0092E7F1 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CDE0B328E32D4E0092E7F1 /* NetworkCall.swift */; };
+		02CDE0B628E3614B0092E7F1 /* OrdersViewController+APICallPreviousOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CDE0B528E3614B0092E7F1 /* OrdersViewController+APICallPreviousOrders.swift */; };
 		02D3217628DC8DB500DE0EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3217528DC8DB500DE0EAE /* AppDelegate.swift */; };
 		02D3217828DC8DB500DE0EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3217728DC8DB500DE0EAE /* SceneDelegate.swift */; };
 		02D3217A28DC8DB500DE0EAE /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3217928DC8DB500DE0EAE /* OrdersViewController.swift */; };
@@ -34,6 +38,10 @@
 		0281B6D328DFA37200EC0114 /* SheetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetTableViewCell.xib; sourceTree = "<group>"; };
 		029BB51D28DF1D0E00DE1BC5 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		029BB51E28DF1D0E00DE1BC5 /* ItemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsCell.xib; sourceTree = "<group>"; };
+		02CDE0AE28E322240092E7F1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		02CDE0B128E32D350092E7F1 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		02CDE0B328E32D4E0092E7F1 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		02CDE0B528E3614B0092E7F1 /* OrdersViewController+APICallPreviousOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdersViewController+APICallPreviousOrders.swift"; sourceTree = "<group>"; };
 		02D3217228DC8DB500DE0EAE /* OrdersApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrdersApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D3217528DC8DB500DE0EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D3217728DC8DB500DE0EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02CDE0B028E32D040092E7F1 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				02CDE0B128E32D350092E7F1 /* URLs.swift */,
+				02CDE0B328E32D4E0092E7F1 /* NetworkCall.swift */,
+			);
+			name = NetworkLayer;
+			sourceTree = "<group>";
+		};
 		02D3216928DC8DB500DE0EAE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +98,7 @@
 		02D3217428DC8DB500DE0EAE /* OrdersApplication */ = {
 			isa = PBXGroup;
 			children = (
+				02CDE0B028E32D040092E7F1 /* NetworkLayer */,
 				02D3219728DCE3FC00DE0EAE /* Extensions */,
 				02D3218928DCD85F00DE0EAE /* OrdersScreen */,
 				02D3217528DC8DB500DE0EAE /* AppDelegate.swift */,
@@ -105,6 +123,7 @@
 		02D3218A28DCD86B00DE0EAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02CDE0AE28E322240092E7F1 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +145,7 @@
 				02D3218D28DCDF7100DE0EAE /* OrdersSectionCell */,
 				02D3217928DC8DB500DE0EAE /* OrdersViewController.swift */,
 				0251C7CE28DE3CDC0090C62E /* OrdersViewController+Delegate.swift */,
+				02CDE0B528E3614B0092E7F1 /* OrdersViewController+APICallPreviousOrders.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,7 +199,6 @@
 				C9B3D927643ECC52A2E350F0 /* Pods-OrdersApplication.debug.xcconfig */,
 				DB1ED63574CA76C4D73226D4 /* Pods-OrdersApplication.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -312,11 +331,15 @@
 				029BB51F28DF1D0F00DE1BC5 /* ItemsCell.swift in Sources */,
 				02D3217A28DC8DB500DE0EAE /* OrdersViewController.swift in Sources */,
 				0281B6D028DF92FA00EC0114 /* ProgressCell.swift in Sources */,
+				02CDE0B228E32D350092E7F1 /* URLs.swift in Sources */,
 				02D3217628DC8DB500DE0EAE /* AppDelegate.swift in Sources */,
 				02D3217828DC8DB500DE0EAE /* SceneDelegate.swift in Sources */,
 				02D3219928DCE3FD00DE0EAE /* UIColorExtensions.swift in Sources */,
 				0251C7CF28DE3CDC0090C62E /* OrdersViewController+Delegate.swift in Sources */,
+				02CDE0AF28E322240092E7F1 /* Product.swift in Sources */,
+				02CDE0B628E3614B0092E7F1 /* OrdersViewController+APICallPreviousOrders.swift in Sources */,
 				0281B6D428DFA37200EC0114 /* SheetTableViewCell.swift in Sources */,
+				02CDE0B428E32D4E0092E7F1 /* NetworkCall.swift in Sources */,
 				0270821D28DDF4D60062E4B3 /* OrdersSectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

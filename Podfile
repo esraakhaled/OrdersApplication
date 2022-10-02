@@ -6,5 +6,7 @@ target 'OrdersApplication' do
   use_frameworks!
 
   # Pods for OrdersApplication
-pod "FlexibleSteppedProgressBar"
+pod 'FlexibleSteppedProgressBar'
+ pod 'Alamofire'
+pod 'SDWebImage'
 end
