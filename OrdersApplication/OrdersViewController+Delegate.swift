@@ -7,68 +7,51 @@
 
 import UIKit
 
+
 extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        product?.product?.count ?? 0
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            if section1Expanded == false {
-                return 0
-            }else{
-                if previous.isSelected == true {
-                    return 2
-                }
-                else {
-                    return 3
-                }
-                
+        
+        if sectionExpanded == false {
+            return 0
+        }else{
+            if previous.isSelected == true {
+                return product?.product?[section].items?.count ?? 0
             }
-        }else if section == 1{
-            if section2Expanded == false {
-                return 0
-            }else{
-                if previous.isSelected == true {
-                    return 2
-                }
-                else {
-                    return 3
-                }
+            else {
+                return 2
             }
         }
-        return 0
     }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "OrdersSectionCell") as! OrdersSectionCell
-        //header.headerTitleLabel.text = "section\(section)"
-        if section == 0 {
-            if section1Expanded {
-                header.arrowImage.image = UIImage(named: "angle-right")
-            }else{
-                header.arrowImage.image = UIImage(named: "right_icon")
-            }
-        }else if section == 1 {
-            if section2Expanded {
-                header.arrowImage.image = UIImage(named: "angle-right")
-            }else{
-                header.arrowImage.image = UIImage(named: "right_icon")
-            }
+        header.configureCell(product: product?.product?[section])
+        if sectionExpanded {
+            header.arrowImage.image = UIImage(named: "angle-right")
+        }else{
+            header.arrowImage.image = UIImage(named: "right_icon")
         }
+        
         header.pressed = {
-            if section == 0 {
-                self.section1Expanded.toggle()
-                tableView.reloadData()
-            }else if section == 1 {
-                self.section2Expanded.toggle()
-                tableView.reloadData()
-            }
+            self.sectionExpanded.toggle()
+            self.callLastOrders()
+            tableView.reloadData()
         }
         return header
     }
-    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if sectionExpanded == true{
+            let footer = tableView.dequeueReusableCell(withIdentifier: "SheetTableViewCell") as! SheetTableViewCell
+            footer.configureCell(product: product?.product?[section])
+            return footer
+        }
+        else {
+            return nil
+        }
+    }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 150
     }
@@ -83,36 +66,24 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableView.automaticDimension
             }
         }
-        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if previous.isSelected == true {
-            
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SheetTableViewCell", for: indexPath) as! SheetTableViewCell
-                return cell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
+            cell.configureCell(product: product?.product?[indexPath.row])
+            return cell
         }
         else {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ItemsCell", for: indexPath) as! ItemsCell
                 return cell
             }
-            else if indexPath.row == 1{
+            else  {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCell", for: indexPath) as! ProgressCell
                 return cell
                 
             }
-            else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SheetTableViewCell", for: indexPath) as! SheetTableViewCell
-                return cell
-            }
         }
-        
-        
     }
 }
 

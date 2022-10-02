@@ -17,13 +17,13 @@ class OrdersViewController: UIViewController {
     }
     @IBOutlet weak var previous: UIButton!
     @IBOutlet weak var current: UIButton!
-    var section1Expanded = false
-    var section2Expanded = false
+    var sectionExpanded = false
+    var product: PreviousProducts?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        setupButtonAppearance()       
+        setupButtonAppearance()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,7 +42,6 @@ class OrdersViewController: UIViewController {
         tableView.register(UINib(nibName: "ItemsCell", bundle: nil), forCellReuseIdentifier: "ItemsCell")
         tableView.register(UINib(nibName: "ProgressCell", bundle: nil), forCellReuseIdentifier: "ProgressCell")
         tableView.register(UINib(nibName: "SheetTableViewCell", bundle: nil), forCellReuseIdentifier: "SheetTableViewCell")
-        
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
     func setupButtonAppearance() {
@@ -69,6 +68,8 @@ class OrdersViewController: UIViewController {
             previous.backgroundColor = .brandPrimary
             previous.layer.borderColor = UIColor.white.cgColor
             previous.layer.borderWidth = 1.0
+            callLastOrders()
+            tableView.reloadData()
         } else {
             previous.backgroundColor = .white
             previous.layer.borderColor = UIColor.brandPrimary?.cgColor
@@ -84,7 +85,6 @@ class OrdersViewController: UIViewController {
             current.layer.borderColor = UIColor.brandPrimary?.cgColor
             current.layer.borderWidth = 1.0
         }
-        
     }
 }
 
