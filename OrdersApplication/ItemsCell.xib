@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-im-Nll">
                         <rect key="frame" x="29" y="13" width="103" height="93"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="armchair" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-5U-JdI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ipa-5U-JdI">
                                 <rect key="frame" x="14" y="8" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="68c-v6-v4f"/>
@@ -149,7 +149,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="armchair" width="72" height="80.5"/>
+        <image name="item-icon" width="72" height="80.5"/>
         <namedColor name="BorderPrimary">
             <color red="0.81999999284744263" green="0.81999999284744263" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
