@@ -1,16 +1,26 @@
 PODS:
+  - Alamofire (5.6.1)
   - FlexibleSteppedProgressBar (0.7.2)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
 
 DEPENDENCIES:
+  - Alamofire
   - FlexibleSteppedProgressBar
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - FlexibleSteppedProgressBar
+    - SDWebImage
 
 SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   FlexibleSteppedProgressBar: 6a781cfed749bf59c69813a8706aa397c342ab5c
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
 
-PODFILE CHECKSUM: df8a3dff4dd1f8466d1926e79aa3a1890a3faffd
+PODFILE CHECKSUM: 1e0bb31e82912d72a52173e793c1415798f5d6f8
 
 COCOAPODS: 1.11.3

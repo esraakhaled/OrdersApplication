@@ -7,4 +7,6 @@ target 'OrdersApplication' do
 
   # Pods for OrdersApplication
 pod "FlexibleSteppedProgressBar"
+ pod 'Alamofire'
+pod 'SDWebImage'
 end

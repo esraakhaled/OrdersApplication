@@ -22,10 +22,6 @@ class OrdersSectionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        parentView.layer.cornerRadius = 5.0
-//        parentView.layer.masksToBounds = true
-//        parentView.layer.borderWidth = 0.5
-//        parentView.layer.borderColor = UIColor.borderPrimary?.cgColor
         view.layer.borderWidth = 0.5
         view.layer.borderColor = UIColor.borderPrimary?.cgColor
        
