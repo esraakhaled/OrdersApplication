@@ -40,6 +40,10 @@ class ProgressCell: UITableViewCell , FlexibleSteppedProgressBarDelegate{
         NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
         
         // Customise the progress bar here
+        configureProgressBar()
+        
+    }
+    func configureProgressBar() {
         progressBarWithoutLastState.numberOfPoints = 3
         progressBarWithoutLastState.lineHeight = 3
         progressBarWithoutLastState.radius = 20
@@ -51,9 +55,7 @@ class ProgressCell: UITableViewCell , FlexibleSteppedProgressBarDelegate{
         progressBarWithoutLastState.currentSelectedCenterColor = progressColor
         progressBarWithoutLastState.stepTextColor = textColorHere
         progressBarWithoutLastState.currentSelectedTextColor = progressColor
-        
         progressBarWithoutLastState.currentIndex = 0
-        
     }
     func progressBar(_ progressBar: FlexibleSteppedProgressBar,
                      didSelectItemAtIndex index: Int) {
