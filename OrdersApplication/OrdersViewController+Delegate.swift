@@ -18,7 +18,7 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
         if sectionExpanded == false {
             return 0
         }else{
-            if previous.isSelected == true {
+            if previous.isSelected {
                 return product?.product?[section].items?.count ?? 0
             }
             else {
